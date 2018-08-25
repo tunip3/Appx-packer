@@ -1,0 +1,10 @@
+C:\Users\code\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+C:\Users\code\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\code\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\code\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\code\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Appx packer.exe.config
+C:\Users\code\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Appx packer.exe
+C:\Users\code\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Appx packer.pdb
+C:\Users\code\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Appxpacker.Properties.Resources.resources
+C:\Users\code\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Appx packer.exe
+C:\Users\code\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Appx packer.pdb

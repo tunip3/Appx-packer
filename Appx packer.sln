@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appx Packer", "Appxpacker\Appx Packer.csproj", "{1DBFB5B0-7D32-46F1-BBE0-79D80F00D96A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1DBFB5B0-7D32-46F1-BBE0-79D80F00D96A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DBFB5B0-7D32-46F1-BBE0-79D80F00D96A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DBFB5B0-7D32-46F1-BBE0-79D80F00D96A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DBFB5B0-7D32-46F1-BBE0-79D80F00D96A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D9454159-8720-4D0A-B4B6-8B7053999238}
+	EndGlobalSection
+EndGlobal
