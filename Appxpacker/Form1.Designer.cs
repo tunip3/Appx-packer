@@ -36,6 +36,7 @@
             this.status = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.Button();
             this.od = new System.Windows.Forms.Button();
+            this.semantic = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -76,7 +77,7 @@
             // 
             // start
             // 
-            this.start.Location = new System.Drawing.Point(12, 90);
+            this.start.Location = new System.Drawing.Point(12, 113);
             this.start.Name = "start";
             this.start.Size = new System.Drawing.Size(356, 26);
             this.start.TabIndex = 4;
@@ -113,11 +114,22 @@
             this.od.UseVisualStyleBackColor = true;
             this.od.Click += new System.EventHandler(this.od_Click);
             // 
+            // semantic
+            // 
+            this.semantic.AutoSize = true;
+            this.semantic.Location = new System.Drawing.Point(12, 90);
+            this.semantic.Name = "semantic";
+            this.semantic.Size = new System.Drawing.Size(154, 17);
+            this.semantic.TabIndex = 8;
+            this.semantic.Text = "Disable semantic validation";
+            this.semantic.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(412, 203);
+            this.Controls.Add(this.semantic);
             this.Controls.Add(this.od);
             this.Controls.Add(this.id);
             this.Controls.Add(this.status);
@@ -144,6 +156,7 @@
         private System.Windows.Forms.Label status;
         private System.Windows.Forms.Button id;
         private System.Windows.Forms.Button od;
+        private System.Windows.Forms.CheckBox semantic;
     }
 }
 

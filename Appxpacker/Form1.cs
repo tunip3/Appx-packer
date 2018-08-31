@@ -145,8 +145,10 @@ namespace WindowsFormsApp1
 
         private void MakeAppx()
         {
-            string text = AppCurrentDirctory + "\\Appxpacker\\MakeAppx.exe";
-            string args = "pack -d \"" + WSAppPath + "\" -p \"" + WSAppOutputPath + "\\" + WSAppFileName + ".appx\" -l";
+            string text
+             = AppCurrentDirctory + "\\Appxpacker\\MakeAppx.exe";
+            string args = "pack - d \"" + WSAppPath + "\" -p \"" + WSAppOutputPath + "\\" + WSAppFileName + ".appx\" -l";
+            if (semantic.Checked) { args = "pack -d \"" + WSAppPath + "\" -p \"" + WSAppOutputPath + "\\" + WSAppFileName + ".appx\" -l -nv";}
             if (File.Exists(text))
             {
                 if (File.Exists(WSAppOutputPath + "\\" + WSAppFileName + ".appx"))
@@ -275,7 +277,6 @@ namespace WindowsFormsApp1
 
         private void inputdir_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -316,7 +317,7 @@ namespace WindowsFormsApp1
         private void id_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog di = new FolderBrowserDialog();
-            di.Description = " select download path";
+            di.Description = " select app folder";
             if (di.ShowDialog() == DialogResult.OK)
                 inputdir.Text = di.SelectedPath;
         }
@@ -324,7 +325,7 @@ namespace WindowsFormsApp1
         private void od_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog duo = new FolderBrowserDialog();
-            duo.Description = " select download path";
+            duo.Description = " select output folder";
             if (duo.ShowDialog() == DialogResult.OK)
                 outputdir.Text = duo.SelectedPath;
         }
