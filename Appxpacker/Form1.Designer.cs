@@ -37,6 +37,7 @@
             this.id = new System.Windows.Forms.Button();
             this.od = new System.Windows.Forms.Button();
             this.semantic = new System.Windows.Forms.CheckBox();
+            this.patchtdf = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -77,7 +78,7 @@
             // 
             // start
             // 
-            this.start.Location = new System.Drawing.Point(12, 113);
+            this.start.Location = new System.Drawing.Point(12, 110);
             this.start.Name = "start";
             this.start.Size = new System.Drawing.Size(356, 26);
             this.start.TabIndex = 4;
@@ -88,7 +89,7 @@
             // status
             // 
             this.status.AutoSize = true;
-            this.status.Location = new System.Drawing.Point(12, 132);
+            this.status.Location = new System.Drawing.Point(12, 139);
             this.status.Name = "status";
             this.status.Size = new System.Drawing.Size(0, 13);
             this.status.TabIndex = 5;
@@ -117,18 +118,32 @@
             // semantic
             // 
             this.semantic.AutoSize = true;
-            this.semantic.Location = new System.Drawing.Point(12, 90);
+            this.semantic.Location = new System.Drawing.Point(214, 90);
             this.semantic.Name = "semantic";
             this.semantic.Size = new System.Drawing.Size(154, 17);
             this.semantic.TabIndex = 8;
             this.semantic.Text = "Disable semantic validation";
             this.semantic.UseVisualStyleBackColor = true;
             // 
+            // patchtdf
+            // 
+            this.patchtdf.AutoSize = true;
+            this.patchtdf.Checked = true;
+            this.patchtdf.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.patchtdf.Location = new System.Drawing.Point(12, 90);
+            this.patchtdf.Name = "patchtdf";
+            this.patchtdf.Size = new System.Drawing.Size(157, 17);
+            this.patchtdf.TabIndex = 9;
+            this.patchtdf.Text = "Patch Target Device Family";
+            this.patchtdf.UseVisualStyleBackColor = true;
+            this.patchtdf.CheckedChanged += new System.EventHandler(this.patchtdf_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(412, 203);
+            this.ClientSize = new System.Drawing.Size(412, 194);
+            this.Controls.Add(this.patchtdf);
             this.Controls.Add(this.semantic);
             this.Controls.Add(this.od);
             this.Controls.Add(this.id);
@@ -157,6 +172,7 @@
         private System.Windows.Forms.Button id;
         private System.Windows.Forms.Button od;
         private System.Windows.Forms.CheckBox semantic;
+        private System.Windows.Forms.CheckBox patchtdf;
     }
 }
 

@@ -149,6 +149,31 @@ namespace WindowsFormsApp1
              = AppCurrentDirctory + "\\Appxpacker\\MakeAppx.exe";
             string args = "pack - d \"" + WSAppPath + "\" -p \"" + WSAppOutputPath + "\\" + WSAppFileName + ".appx\" -l";
             if (semantic.Checked) { args = "pack -d \"" + WSAppPath + "\" -p \"" + WSAppOutputPath + "\\" + WSAppFileName + ".appx\" -l -nv";}
+            if (patchtdf.Checked) {
+                // a majority of this is just shoddy detection code to avoidproducing any unexpected errors later
+                // create devices list
+                List<string> devices = new List<string>();
+                List<string> adevices = new List<string>();
+                // add devices
+                devices.Add("Windows.Mobile");
+                devices.Add("Windows.Xbox");
+                devices.Add("Windows.Holographic");
+                devices.Add("Windows.Team");
+                devices.Add("Windows.IoT");
+                devices.Add("Windows.Desktop");
+                // open manifest
+                string manifest = File.ReadAllText(WSAppPath + "\\AppxManifest.xml");
+                // loop through devices and search for them
+                foreach (string value in devices) {
+                    if ((manifest.Contains(value))) {
+                        adevices.Add(value);
+                    }
+                }
+                string replace = adevices.First();
+                MessageBox.Show(replace);
+                manifest = manifest.Replace(replace, "Windows.Universal");
+                File.WriteAllText((WSAppPath + "\\AppxManifest.xml"), manifest);
+            }
             if (File.Exists(text))
             {
                 if (File.Exists(WSAppOutputPath + "\\" + WSAppFileName + ".appx"))
@@ -328,6 +353,11 @@ namespace WindowsFormsApp1
             duo.Description = " select output folder";
             if (duo.ShowDialog() == DialogResult.OK)
                 outputdir.Text = duo.SelectedPath;
+        }
+
+        private void patchtdf_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
