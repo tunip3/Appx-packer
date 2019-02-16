@@ -1,6 +1,9 @@
 # Appx-packer
 An appx packer
 
+# Downloads
+automatic appveyor builds: https://ci.appveyor.com/project/tunip3/appx-packer/build/artifacts
+
 # Requirements
 you must create a folder called appxpacker next to the executable and it needs to contain the following files:
 
