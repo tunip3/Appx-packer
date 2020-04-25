@@ -147,7 +147,7 @@ namespace WindowsFormsApp1
         {
             string text
              = AppCurrentDirctory + "\\Appxpacker\\MakeAppx.exe";
-            string args = "pack - d \"" + WSAppPath + "\" -p \"" + WSAppOutputPath + "\\" + WSAppFileName + ".appx\" -l";
+            string args = "pack -d \"" + WSAppPath + "\" -p \"" + WSAppOutputPath + "\\" + WSAppFileName + ".appx\" -l";
             if (semantic.Checked) { args += " -nv";}
             if (patchtdf.Checked) {
                 // a majority of this is just shoddy detection code to avoidproducing any unexpected errors later
