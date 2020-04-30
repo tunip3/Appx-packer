@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace WindowsFormsApp1
 {
@@ -150,29 +151,38 @@ namespace WindowsFormsApp1
             string args = "pack -d \"" + WSAppPath + "\" -p \"" + WSAppOutputPath + "\\" + WSAppFileName + ".appx\" -l";
             if (semantic.Checked) { args += " -nv";}
             if (patchtdf.Checked) {
-                // a majority of this is just shoddy detection code to avoidproducing any unexpected errors later
-                // create devices list
-                List<string> devices = new List<string>();
-                List<string> adevices = new List<string>();
-                // add devices
-                devices.Add("Windows.Mobile");
-                devices.Add("Windows.Xbox");
-                devices.Add("Windows.Holographic");
-                devices.Add("Windows.Team");
-                devices.Add("Windows.IoT");
-                devices.Add("Windows.Desktop");
                 // open manifest
                 string manifest = File.ReadAllText(WSAppPath + "\\AppxManifest.xml");
-                // loop through devices and search for them
-                foreach (string value in devices) {
-                    if ((manifest.Contains(value))) {
-                        adevices.Add(value);
-                    }
+                string customnamespace = "http://schemas.microsoft.com/appx/manifest/foundation/windows10";
+                XDocument doc = XDocument.Parse(manifest);
+                XElement identity = doc.Root.Element(XName.Get("Identity", customnamespace));
+                if (identity == null)
+                {
+                    throw new ArgumentNullException("Identity element not found");
                 }
-                string replace = adevices.First();
-                MessageBox.Show(replace);
-                manifest = manifest.Replace(replace, "Windows.Universal");
-                File.WriteAllText((WSAppPath + "\\AppxManifest.xml"), manifest);
+                string architecture = identity.Attribute("ProcessorArchitecture").Value;
+                if (architecture == null)
+                {
+                    throw new ArgumentNullException("Identity Name not found");
+                }
+                if (architecture.ToLower() != "x64") {
+                    identity.Attribute("ProcessorArchitecture").Value = "x64";
+                }
+                string TargetDeviceFamily="";
+                var dependencies = doc.Root.Element(XName.Get("Dependencies", customnamespace));
+                if (dependencies != null)
+                {
+                    TargetDeviceFamily = dependencies.Element(XName.Get("TargetDeviceFamily", customnamespace)).Attribute("Name").Value;
+                    if (TargetDeviceFamily == null)
+                    {
+                        throw new ArgumentNullException("TargetDeviceFamily element not found");
+                    }
+                    if ((TargetDeviceFamily.ToLower() != "windows.universal") | (TargetDeviceFamily.ToLower() != "windows.xbox")) {
+                        dependencies.Element(XName.Get("TargetDeviceFamily", customnamespace)).Attribute("Name").Value = "Windows.Universal";
+                    } 
+                }
+                
+                File.WriteAllText((WSAppPath + "\\AppxManifest.xml"), doc.ToString());
             }
             if (File.Exists(text))
             {

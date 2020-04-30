@@ -133,9 +133,9 @@
             this.patchtdf.CheckState = System.Windows.Forms.CheckState.Checked;
             this.patchtdf.Location = new System.Drawing.Point(12, 90);
             this.patchtdf.Name = "patchtdf";
-            this.patchtdf.Size = new System.Drawing.Size(157, 17);
+            this.patchtdf.Size = new System.Drawing.Size(95, 17);
             this.patchtdf.TabIndex = 9;
-            this.patchtdf.Text = "Patch Target Device Family";
+            this.patchtdf.Text = "Patch For XB1";
             this.patchtdf.UseVisualStyleBackColor = true;
             this.patchtdf.CheckedChanged += new System.EventHandler(this.patchtdf_CheckedChanged);
             // 
