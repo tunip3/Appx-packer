@@ -7,7 +7,7 @@ automatic appveyor builds: https://ci.appveyor.com/project/tunip3/appx-packer/bu
 # Requirements
 you must create a folder called appxpacker next to the executable and it needs to contain the following files:
 
-appxpackaging.dll
+```appxpackaging.dll
 
 appxsip.dll
 
@@ -56,6 +56,6 @@ wintrust.dll
 
 wintrust.dll.ini
 
-wsutilhelper.dll
+wsutilhelper.dll```
 
 these are obtainable via the windows kits (for uwp development) in visual studio
